@@ -13,7 +13,7 @@
   </div>
   <div class="slider-demo-block">
     <span class="demonstration">Format Tooltip</span>
-    <el-slider v-model="value4" :format-tooltip="formatTooltip" />
+     <el-slider v-model="value6.slider"  :min="value6.min" :max="value6.max" range :marks="value6.mark" :format-tooltip="formatTooltip" />
   </div>
   <div class="slider-demo-block">
     <span class="demonstration">Disabled</span>
@@ -29,7 +29,15 @@ const value2 = ref(0)
 const value3 = ref(0)
 const value4 = ref(0)
 const value5 = ref(0)
-
+const value6 = ref({
+	slider:[0.03,0.28],
+  mark:{
+    '0.03':0.03,
+    '0.28':0.28
+  },
+  min:0.03,
+  max:0.28
+})
 const formatTooltip = (val: number) => {
   return val / 100
 }
